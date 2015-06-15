@@ -1,0 +1,5 @@
+images/
+build/
+stage/
+include/config/
+include/generated/
