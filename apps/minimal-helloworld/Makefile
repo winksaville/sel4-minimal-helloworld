@@ -8,15 +8,14 @@
 # Targets
 TARGETS := $(notdir $(SOURCE_DIR)).bin
 
-# Set custom entry point as we are a rootserver and will not be
-# started in a standard way
-ENTRY_POINT := _sel4_start
+# Entry point is just main for now
+ENTRY_POINT := main
 
 # Source files required to build the target
 CFILES   := src/main.c
 
-# Libraries required to build the target
-#LIBS = sel4
+# No libraries yet
+LIBS :=
 
 # extra cflag for sel4test
 CFLAGS += -Werror -g
