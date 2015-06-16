@@ -18,11 +18,31 @@ include tools/common/project.mk
 
 # Some example qemu invocations
 
+QEMU := qemu-system-i386
+QEMU_FLAGS := -m 512 -nographic
+
+ifeq ("$(KERNEL)", "")
+  # Default kernel
+  KERNEL := "images/kernel-ia32-pc99"
+endif
+
+ifeq ("$(APP)", "")
+  # Default app
+  APP := "images/minimal-helloworld-image-ia32-pc99"
+endif
+
+ifeq ("$(QF)", "")
+  # Qemu Flags that the user wants to add
+  QF :=
+endif
+
 # note: this relies on qemu after version 2.0
 simulate-mhw-ia32:
-	qemu-system-i386 \
-		-m 512 -nographic -kernel images/kernel-ia32-pc99 \
-		-initrd images/minimal-helloworld-image-ia32-pc99
+	$(QEMU) $(QF) $(QEMU_FLAGS) -kernel $(KERNEL) -initrd $(APP)
+
+# Start qemu in stopped mode (-S option) with a defualt TCP port localhost:1234 (-s option)
+debug-mhw-ia32:
+	$(QEMU) -s -S $(QF) $(QEMU_FLAGS) -kernel $(KERNEL) -initrd $(APP)
 
 .PHONY: help
 help:
