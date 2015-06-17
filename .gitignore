@@ -3,3 +3,6 @@ build/
 stage/
 include/config/
 include/generated/
+
+.config
+.config.old
