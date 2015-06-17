@@ -8,17 +8,20 @@
 # Targets
 TARGETS := $(notdir $(SOURCE_DIR)).bin
 
-# Entry point is just main for now
-ENTRY_POINT := main
+# Entry point must at a minimum setup the stack and invoke main
+ENTRY_POINT := _min_start
 
 # Source files required to build the target
 CFILES   := src/main.c
 
+ASMFILES := src/min_start.S
+
 # No libraries yet
 LIBS :=
 
-# extra cflag for sel4test
-CFLAGS += -Werror -g
+# extra flags
+CFLAGS += -Werror -ggdb -g3
+ASFLAGS += -Werror -ggdb -g3
 ifdef CONFIG_X86_64
 CFLAGS += -mno-sse
 endif

@@ -6,11 +6,18 @@
  * See "LICENSE_BSD2.txt" for details.
  */
 
+/**
+ * Currently no parameters are passed to main
+ * and the program hangs when we return.
+ */
 int main(void)
 {
-    // Hang, because if we return we fault at address 0
-    while(1) {}
+    int i = 0;
 
-    // We never get here
+    // Do work
+    for (i = 0; i < 1000; i++) {
+    }
+
+    // Return success
     return 0;
 }
