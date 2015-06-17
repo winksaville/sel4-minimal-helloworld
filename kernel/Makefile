@@ -331,7 +331,6 @@ DEFINES += ${CONFIG_DEFS:%=-D%}
 ifdef DEBUG
 DEFINES += -DDEBUG
 CFLAGS  += -ggdb -g3
-ASFLAGS  += -ggdb -g3
 endif
 
 ifdef DANGEROUS_CODE_INJECTION
