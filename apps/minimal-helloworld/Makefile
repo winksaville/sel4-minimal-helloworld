@@ -14,10 +14,10 @@ ENTRY_POINT := _min_start
 # Source files required to build the target
 CFILES   := src/main.c
 
-ASMFILES := src/min_start.S
+ASMFILES :=
 
-# No libraries yet
-LIBS :=
+# Libraries we need
+LIBS := sel4minimal
 
 # extra flags
 CFLAGS += -Werror -ggdb -g3

@@ -10,12 +10,12 @@
  * Currently no parameters are passed to main
  * and the program hangs when we return.
  */
+volatile int gi;
+
 int main(void)
 {
-    int i = 0;
-
     // Do work
-    for (i = 0; i < 1000; i++) {
+    for (gi = 0; gi < 1000; gi++) {
     }
 
     // Return success
