@@ -21,9 +21,8 @@ menu "seL4 Kernel"
     source "kernel/Kconfig"
 endmenu
 
-# This requires HAVE_LIBC which I don't have so don't 
-#menu "seL4 Libraries"
-#    source "kernel/libsel4/Kconfig"
-#endmenu
+menu "seL4 Libraries"
+    source "libs/libsel4minimal/Kconfig"
+endmenu
 
 source "$COMMON_PATH/Kconfig"
