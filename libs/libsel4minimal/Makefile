@@ -18,7 +18,9 @@ CFILES   :=
 ASMFILES := src/min_start.S
 
 # Header file/directories this library exports
-HDRFILES :=
+HDRFILES := \
+	$(wildcard $(SOURCE_DIR)/include/*) \
+	$(wildcard $(SOURCE_DIR)/arch_include/$(ARCH)/*)
 
 # extra flags
 CFLAGS += -Werror -ggdb -g3

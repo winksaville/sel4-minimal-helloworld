@@ -6,18 +6,30 @@
  * See "LICENSE_BSD2.txt" for details.
  */
 
+#include <stddef.h>
+#include <sel4/arch/syscalls.h>
+
+/**
+ * Print a string. Only works with debug version of Kernel.
+ * In make menuconfig enable:
+ *   seL4 Kernel ---> Build Options ---> Build the kernel with debug support
+ */
+void printstrg(char *s) {
+  if (s != NULL) {
+    char c;
+    while ((c = *s++) != 0) {
+      seL4_DebugPutChar(c);
+    }
+  }
+}
+
 /**
  * Currently no parameters are passed to main
  * and the program hangs when we return.
  */
-volatile int gi;
+int main(void) {
+  printstrg("Hello, World\r\n");
 
-int main(void)
-{
-    // Do work
-    for (gi = 0; gi < 1000; gi++) {
-    }
-
-    // Return success
-    return 0;
+  // Return success
+  return 0;
 }
