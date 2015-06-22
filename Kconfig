@@ -22,7 +22,6 @@ menu "seL4 Kernel"
 endmenu
 
 menu "seL4 Libraries"
-    source "libs/libsel4minimal/Kconfig"
     source "libs/libsel4/Kconfig"
 endmenu
 
