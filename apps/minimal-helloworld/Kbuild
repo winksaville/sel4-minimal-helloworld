@@ -8,6 +8,6 @@
 apps-$(CONFIG_APP_MINIMAL_HELLOWORLD) += minimal-helloworld
 
 # LIbraries needed
-minimal-helloworld-y = libsel4minimal
+minimal-helloworld-y = libsel4
 
 minimal-helloworld: kernel_elf $(minimal-helloworld-y)

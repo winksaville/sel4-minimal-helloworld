@@ -24,12 +24,10 @@ void printstrg(char *s) {
 }
 
 /**
- * Currently no parameters are passed to main
- * and the program hangs when we return.
+ * No parameters are passed to main, the return
+ * value is ignored and the program hangs.
  */
 int main(void) {
   printstrg("Hello, World\r\n");
-
-  // Return success
   return 0;
 }

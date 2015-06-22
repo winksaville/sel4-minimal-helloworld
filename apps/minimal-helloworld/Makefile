@@ -9,7 +9,7 @@
 TARGETS := $(notdir $(SOURCE_DIR)).bin
 
 # Entry point must at a minimum setup the stack and invoke main
-ENTRY_POINT := _min_start
+ENTRY_POINT := _libsel4_start
 
 # Source files required to build the target
 CFILES   := src/main.c
@@ -17,7 +17,7 @@ CFILES   := src/main.c
 ASMFILES :=
 
 # Libraries we need
-LIBS := sel4minimal
+LIBS := sel4
 
 # extra flags
 CFLAGS += -Werror -ggdb -g3

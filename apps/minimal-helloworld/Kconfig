@@ -8,7 +8,7 @@
 menuconfig APP_MINIMAL_HELLOWORLD
     bool "minimal-helloworld"
     default y
-    depends on LIB_SEL4_MINIMAL
+    depends on LIB_SEL4
     help
         Minimal Hello World application
 
