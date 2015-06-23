@@ -6,19 +6,7 @@
  * See "LICENSE_BSD2.txt" for details.
  */
 
-#ifndef __STDBOOL_H
-#define __STDBOOL_H
-
-#ifndef true
-#define true 1
-#endif
-
-#ifndef false
-#define false 0
-#endif
-
-#ifndef bool
-#define bool char
-#endif
-
-#endif
+void halt(void) {
+    while(1) {
+    }
+}
